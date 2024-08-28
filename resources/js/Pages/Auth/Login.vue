@@ -31,6 +31,9 @@ const submit = () => {
 const loginWithGoogle = () => {
     window.location.href='/auth/google/redirect';
 }
+const loginWithLinkedin = () => {
+    window.location.href='/auth/linkedin/redirect';
+}
 
 
 // const loginWithGoogle = async () => { // Use async for potential asynchronous operations
@@ -65,6 +68,11 @@ const loginWithGoogle = () => {
         <div>
             <PrimaryButton @click="loginWithGoogle" class="w-full my-3" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     <span class="mx-auto">Entra com Google</span>
+            </PrimaryButton>
+        </div>
+        <div>
+            <PrimaryButton @click="loginWithLinkedin" class="w-full my-3" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    <span class="mx-auto">Entra com Linkedin</span>
             </PrimaryButton>
         </div>
 

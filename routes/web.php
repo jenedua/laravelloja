@@ -4,6 +4,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\Auth\GoogleController;
+use App\Http\Controllers\Auth\LinkedinController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +36,10 @@ Route::middleware([
     })->name('dashboard');
 });
 
+/** Google OAuth routes */
 Route::get('auth/google/redirect', [GoogleController::class, 'handleGoogleRedirect']);
-
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
+
+/** Linkedin OAuth routes */
+Route::get('auth/linkedin/redirect', [LinkedinController::class, 'handleLinkedinRedirect']);
+Route::get('auth/linkedin/callback', [LinkedinController::class, 'handleLinkedinCallback']);
